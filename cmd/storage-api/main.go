@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/0xEDU/goblog/pkg/test"
+)
 
 func main() {
-	fmt.Println("Hello from API")
+	shared.Hello()
 }
