@@ -3,12 +3,20 @@ package articles;
 
 option go_package = "github.com/0xEDU/goblog/proto/articles";
 
-service ArticleService { rpc GetArticleList(ArticleListRequest) returns (ArticleListResponse); }
+service ArticleService {
+  rpc GetArticleList(ArticleListRequest) returns (ArticleListResponse);
+  rpc CreateArticle(CreateArticleRequest) returns (Article);
+}
 
 message Article {
   string id = 1;
   string author = 2;
   bytes markdown = 3;
+}
+
+message CreateArticleRequest {
+  string author = 1;
+  bytes markdown = 2;
 }
 
 message ArticleListResponse { repeated Article articles = 1; }
