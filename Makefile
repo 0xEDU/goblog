@@ -29,6 +29,7 @@ build-dir:
 
 build-ui: compile-proto
 	@go build -o ${UI_PATH} ./cmd/${UI_NAME}/main.go
+	@cp -r ./cmd/ui/static ${BUILD_DIR}
 
 run-ui: build-ui
 	@./${UI_PATH}
